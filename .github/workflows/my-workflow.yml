@@ -13,3 +13,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: ha-ha
         uses: ./.github/actions/joke-action
+
+  build-and-deploy:
+    name: list webapp
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - run: |
+          az webapp list --query "[?state=='Running']"
