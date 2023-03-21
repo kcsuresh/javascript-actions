@@ -2,8 +2,7 @@ name: JS Actions
 
 on:
   issues:
-    types: 
-      if: contains(github.event.pull_request.labels.*.name, 'stage')
+    types: [labeled]
 
 jobs:
   action:
