@@ -1,9 +1,9 @@
 name: JS Actions
 
 on:
-  push:
   issues:
-    types: [labeled]
+    types: 
+      if: contains(github.event.pull_request.labels.*.name, 'stage')
 
 jobs:
   action:
