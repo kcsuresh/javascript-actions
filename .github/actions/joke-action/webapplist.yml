@@ -1,12 +1,7 @@
-
-# File: .github/workflows/workflow.yml
-
+name: AzureLoginSample
 on: [push]
 
-name: AzureLoginSample
-
 jobs:
-
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
